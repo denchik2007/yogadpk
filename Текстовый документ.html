@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YogaFlow — Бронирование занятий</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body{
+      background:#f8f5f2;
+      color:#4b4b4b;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#d8cfc4,#e8ddd3);
+      padding:40px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:700;
+      color:#6e5d52;
+    }
+
+    nav a{
+      margin-left:20px;
+      text-decoration:none;
+      color:#6e5d52;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#9c8577;
+    }
+
+    .hero{
+      min-height:80vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:60px 10%;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-size:52px;
+      color:#5f5249;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      margin-bottom:30px;
+      color:#6b625d;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      background:#bda89a;
+      color:white;
+      border-radius:30px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#a58f82;
+    }
+
+    .hero-image{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-image img{
+      width:100%;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      color:#5f5249;
+      margin-bottom:10px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#7a685c;
+    }
+
+    .schedule{
+      background:#efe6df;
+      border-radius:25px;
+      padding:40px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:20px;
+    }
+
+    th, td{
+      padding:15px;
+      text-align:center;
+    }
+
+    th{
+      background:#cbb7aa;
+      color:white;
+    }
+
+    tr:nth-child(even){
+      background:#f9f4f1;
+    }
+
+    .booking-form{
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+      max-width:700px;
+      margin:auto;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea{
+      width:100%;
+      padding:15px;
+      margin-top:15px;
+      border:none;
+      background:#f4efeb;
+      border-radius:12px;
+      outline:none;
+    }
+
+    .booking-form button{
+      margin-top:20px;
+      width:100%;
+      padding:15px;
+      border:none;
+      background:#b59d8e;
+      color:white;
+      border-radius:12px;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .booking-form button:hover{
+      background:#9f8879;
+    }
+
+    footer{
+      background:#ddd0c7;
+      text-align:center;
+      padding:25px;
+      margin-top:60px;
+      color:#5f5249;
+    }
+
+    @media(max-width:768px){
+      .hero-text h1{
+        font-size:38px;
+      }
+
+      header{
+        text-align:center;
+      }
+
+      nav{
+        margin-top:20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">YogaFlow</div>
+
+    <nav>
+      <a href="#">Главная</a>
+      <a href="#">Услуги</a>
+      <a href="#">Расписание</a>
+      <a href="#">Бронирование</a>
+      <a href="#">Контакты</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+
+
+<h1>Система бронирования услуг студии йоги</h1>
+
+      <p>
+        Удобная онлайн-платформа для записи на занятия йогой,
+        управления расписанием и бронирования тренировок
+        в спокойной и гармоничной атмосфере.
+      </p>
+
+      <a href="#" class="btn">Записаться на занятие</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop" alt="Йога">
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Наши услуги</h2>
+      <p>Выберите подходящее направление для практики</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Хатха-йога</h3>
+        <p>
+          Классические занятия для укрепления тела,
+          улучшения гибкости и внутреннего баланса.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Медитация</h3>
+        <p>
+          Практики расслабления и концентрации
+          для восстановления эмоционального состояния.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Йога для начинающих</h3>
+        <p>
+          Комфортные тренировки для тех,
+          кто только начинает знакомство с йогой.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="schedule">
+      <div class="section-title">
+        <h2>Расписание занятий</h2>
+      </div>
+
+      <table>
+        <tr>
+          <th>День</th>
+          <th>Время</th>
+          <th>Направление</th>
+        </tr>
+
+        <tr>
+          <td>Понедельник</td>
+          <td>18:00</td>
+          <td>Хатха-йога</td>
+        </tr>
+
+        <tr>
+          <td>Среда</td>
+          <td>19:00</td>
+          <td>Медитация</td>
+        </tr>
+
+        <tr>
+          <td>Пятница</td>
+          <td>17:30</td>
+          <td>Йога для начинающих</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Форма бронирования</h2>
+      <p>Оставьте заявку на посещение занятия</p>
+    </div>
+
+    <form class="booking-form">
+      <input type="text" placeholder="Ваше имя" required>
+
+      <input type="email" placeholder="Электронная почта" required>
+
+      <select required>
+        <option value="">Выберите занятие</option>
+        <option>Хатха-йога</option>
+        <option>Медитация</option>
+        <option>Йога для начинающих</option>
+      </select>
+
+      <input type="date" required>
+
+      <textarea rows="5" placeholder="Комментарий"></textarea>
+
+      <button type="submit">Забронировать</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2026 YogaFlow — Система бронирования студии йоги
+  </footer>
+
+</body>
+</html>
